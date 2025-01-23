@@ -1,9 +1,18 @@
+import { HTMLMotionProps, motion } from "framer-motion"
 
-const Button = () => {
+type ButtonProps = {
+  label: string,
+  className: string,
+} & HTMLMotionProps<'button'>
+const Button = ({ label, className, ...rest }: ButtonProps) => {
+  console.log({...rest})
   return (
-    <button className="bg-white text-black px-4 rounded-lg font-bold py-3 text-lg">
-      Contact us
-    </button>
+    <motion.button
+      className={className}
+      {...rest}
+    >
+      {label}
+    </motion.button>
   )
 }
 

@@ -12,8 +12,9 @@ interface NavLinksProps {
 const NavLinks: React.FC<NavLinksProps> = ({ navData }) => {
   const [isActive, setIsActive] = useState<string>("Home");
   return (
-    <div>
-      <ul className="text-[#92969F]  flex items-center gap-x-16 font-medium text-lg">
+    <>
+      {/* for desktop view  */}
+      <ul className="hidden lg:flex text-[#92969F] items-center gap-x-16 font-medium text-lg">
         {navData.map((link) => (
           <li
             key={link.id}
@@ -44,7 +45,23 @@ const NavLinks: React.FC<NavLinksProps> = ({ navData }) => {
           </li>
         ))}
       </ul>
-    </div>
+      
+        <ul className="flex flex-col gap-6 lg:hidden">
+          {
+            navData.map((link) => (
+              <motion.li
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  duration:  (Number(link.id) * 0.5)
+                }}
+                key={link.id}>
+                {link.title}
+              </motion.li>
+            ))
+          }
+        </ul>
+    </>
   );
 };
 
