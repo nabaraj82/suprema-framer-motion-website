@@ -27,34 +27,66 @@ const Navbar = () => {
           }}
         />
       </nav>
-      {/* for mobile and tablet view  */}
-      <nav className="flex lg:hidden bg-black fixed  justify-between items-center left-20 right-20 top-8 text-white max-w[1020px] z-[8] p-4 rounded-2xl shadow-4xl">
+
+      {/* tablet view  */}
+      <nav className="hidden md:flex lg:hidden bg-black fixed  justify-between items-center left-10 right-10 top-8 text-white max-w[1020px] z-[8] p-4 rounded-2xl shadow-4xl">
         <div className="relative flex w-full h-full justify-between  items-center">
           <Logo />
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="bg-white flex justify-center items-center gap-10 w-[48px] h-[48px] text-black rounded-xl">
+            className="bg-white flex justify-center items-center gap-10 w-[48px] h-[48px] text-black rounded-xl"
+          >
             <Icon icon="heroicons-solid:menu-alt-3" width={25} />
           </button>
-          <AnimatePresence >
-            {
-            showMenu && (
-                <motion.div
-                  key="menu"
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x:0 }}
-                  exit={{ opacity: 0, x: 10 }}
-                  transition={{duration: 0.5, delay: 0.1}}
-                  className="absolute top-20 right-0 bg-lightDark w-[290px] h-[290px] border-[1px] border-black rounded-[10px] p-4 ">
-            <NavLinks navData={navLinks} />
-            <Button
-              label="Contact us"
-              className="bg-white text-black px-4 rounded-lg font-bold py-3 my-6 text-lg"
-            />
-          </motion.div>
-        )
-      }
-      </AnimatePresence>
+          <AnimatePresence>
+            {showMenu && (
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 10 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="absolute top-20 right-0 bg-lightDark w-[290px] h-[290px] border-[1px] border-black rounded-[10px] p-4 "
+              >
+                <NavLinks navData={navLinks} />
+                <Button
+                  label="Contact us"
+                  className="bg-white text-black px-4 rounded-lg font-bold py-3 my-6 text-lg"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </nav>
+
+      {/* mobile view */}
+      <nav className="flex md:hidden lg:hidden bg-black fixed  justify-between items-center left-4 right-4 top-8 text-white max-w[1020px] z-[8] p-4 rounded-2xl shadow-4xl">
+        <div className="relative flex w-full h-full justify-between  items-center">
+          <Logo />
+          <button
+            onClick={() => setShowMenu(!showMenu)}
+            className="bg-white flex justify-center items-center gap-10 w-[48px] h-[48px] text-black rounded-xl"
+          >
+            <Icon icon="heroicons-solid:menu-alt-3" width={25} />
+          </button>
+          <AnimatePresence>
+            {showMenu && (
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 10 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="absolute top-20 right-0 bg-lightDark w-[290px] h-[290px] border-[1px] border-black rounded-[10px] p-4 "
+              >
+                <NavLinks navData={navLinks} />
+                <Button
+                  label="Contact us"
+                  className="bg-white text-black px-4 rounded-lg font-bold py-3 my-6 text-lg"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </nav>
     </>
