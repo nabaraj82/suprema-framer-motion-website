@@ -7,8 +7,16 @@ type ParticleProps = {
     duration: number;
   delay: number,
 };
-const ParticleLeft = ({ fromX, toX, fromY, toY, duration,delay }: ParticleProps) => (
+const ParticleLeft = ({
+  fromX,
+  toX,
+  fromY,
+  toY,
+  duration,
+  delay,
+}: ParticleProps) => (
   <motion.div
+    style={{ willChange: "transform" }}
     initial={{ x: fromX, y: fromY, opacity: 1 }}
     animate={{
       x: toX,
@@ -18,8 +26,8 @@ const ParticleLeft = ({ fromX, toX, fromY, toY, duration,delay }: ParticleProps)
       height: 0,
     }}
     transition={{
-        duration,
-        delay,
+      duration,
+      delay,
       repeat: Infinity,
       repeatType: "loop",
     }}

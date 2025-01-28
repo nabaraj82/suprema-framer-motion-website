@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       {/* For Desktop View */}
-      <nav className="hidden lg:flex bg-black fixed  justify-between items-center left-20 right-20 top-8 text-white max-w[1020px] z-[8] p-4 rounded-lg">
+      <nav className="hidden lg:flex bg-black fixed  justify-between items-center left-20 right-10 top-8 text-white max-w[1020px] z-40 p-4 rounded-lg">
         <Logo />
         <NavLinks navData={navLinks} />
         <Button
@@ -60,7 +60,7 @@ const Navbar = () => {
       </nav>
 
       {/* mobile view */}
-      <nav className="flex md:hidden lg:hidden bg-black fixed  justify-between items-center left-4 right-4 top-8 text-white max-w[1020px] z-[8] p-4 rounded-2xl shadow-4xl">
+      <nav className="flex md:hidden lg:hidden bg-black fixed  justify-between items-center left-4 right-4 top-8 text-white max-w[1020px] z-20 p-4 rounded-2xl shadow-4xl">
         <div className="relative flex w-full h-full justify-between  items-center">
           <Logo />
           <button

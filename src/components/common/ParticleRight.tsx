@@ -7,8 +7,16 @@ type ParticleProps = {
   duration: number,
     delay: number,
 }
-const ParticleRight = ({ fromX, toX, fromY, toY, duration, delay }: ParticleProps) => (
+const ParticleRight = ({
+  fromX,
+  toX,
+  fromY,
+  toY,
+  duration,
+  delay,
+}: ParticleProps) => (
   <motion.div
+    style={{ willChange: "transform" }}
     initial={{ x: fromX, y: fromY, opacity: 1 }}
     animate={{
       x: toX,
