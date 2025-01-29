@@ -29,7 +29,7 @@ const Navbar = () => {
       </nav>
 
       {/* tablet view  */}
-      <nav className="hidden md:flex lg:hidden bg-black fixed  justify-between items-center left-10 right-10 top-8 text-white max-w[1020px] z-[8] p-4 rounded-2xl shadow-4xl">
+      <nav className="hidden md:flex lg:hidden bg-black fixed  justify-between items-center left-10 right-10 top-8 text-white max-w[1020px] z-40 p-4 rounded-2xl shadow-4xl">
         <div className="relative flex w-full h-full justify-between  items-center">
           <Logo />
           <button

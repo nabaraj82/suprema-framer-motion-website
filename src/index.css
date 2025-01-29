@@ -8,5 +8,9 @@ html{
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }

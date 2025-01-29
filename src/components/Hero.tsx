@@ -16,7 +16,9 @@ const Hero = () => {
     visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
   };
   return (
-    <div className="relative flex flex-col p-4 h-screen w-full bg-black overflow-hidden">
+    <div className="relative flex flex-col p-4 h-screen w-full bg-black overflow-x-hidden">
+      <Navbar />
+
       {/* top light right */}
       <img
         src="src/assets/light-right.svg"
@@ -137,10 +139,9 @@ const Hero = () => {
         duration={11}
         delay={0.8}
       />
-      <Navbar />
 
       {/* hero background image top left  */}
-      <div className="hidden absolute md:block  opacity-[0.5] w-28 top-28 left-0  z-0">
+      <div className="hidden absolute md:block  opacity-[0.5] w-28 lg:w-48 top-28 left-0 lg:left-4  z-0">
         <motion.img
           style={{ willChange: "transform" }}
           animate={{
@@ -152,13 +153,13 @@ const Hero = () => {
             repeat: Infinity,
             repeatType: "loop",
           }}
-          src="src/assets/hero/log.avif"
+          src="src/assets/hero/keyboard-design.avif"
           alt="log"
         />
       </div>
 
       {/* hero background image top right  */}
-      <div className="absolute hidden md:block top-12 -right-3 opacity-[0.5] w-40 z-0">
+      <div className="absolute hidden md:block top-12 lg:top-14 -right-3 lg:right-0 opacity-[0.5] w-40 lg:w-48 z-0">
         <motion.img
           style={{ willChange: "transform" }}
           animate={{
@@ -175,7 +176,7 @@ const Hero = () => {
         />
       </div>
       {/* hero background image bottom right  */}
-      <div className="absolute hidden md:block top-[45%] -right-64 w-96 overflow-hidden">
+      <div className="absolute hidden md:block top-[45%] lg:top-[70%] -right-64 lg:-right-20 w-96 overflow-hidden">
         <motion.img
           style={{ willChange: "transform" }}
           animate={{
@@ -192,10 +193,10 @@ const Hero = () => {
           height="100%"
           alt="log"
         />
-        <div className="absolute rotate-180 bg-custom-gradient2 h-full w-40 top-0 -left-4 z-10" />
+        <div className="absolute rotate-180 bg-custom-gradient2 h-full w-full top-0 left-0  z-10" />
       </div>
-      {/* hero background image bottom right  */}
-      <div className="absolute hidden md:block top-[45%] -left-48 w-96 z-0">
+      {/* hero background image bottom left  */}
+      <div className="absolute hidden md:block top-[45%] lg:top-[70%] -left-48 lg:-left-16 w-96 z-0">
         <motion.img
           style={{ willChange: "transform" }}
           animate={{
@@ -212,10 +213,10 @@ const Hero = () => {
           height="100%"
           alt="log"
         />
-        <div className="absolute bg-custom-gradient2 h-full w-40 top-0 left-[50%] z-10" />
+        <div className="absolute bg-custom-gradient2 h-full w-full top-0 left-0  z-10" />
       </div>
 
-      {/* hero main section for movile view */}
+      {/* hero main section */}
       <div
         className="mt-40 flex flex-col
       justify-center items-center  text-white z-10"
@@ -231,7 +232,7 @@ const Hero = () => {
             <Icon icon="solar:arrow-right-outline" width="18" height="18" />
           </span>
         </div>
-        <div className="flex flex-col justify-center items-center mt-4 md:mx-9">
+        <div className="flex flex-col justify-center items-center mt-4 md:mx-9 lg:mx-80">
           <motion.h1
             style={{ willChange: "transform" }}
             className="font-bold text-[36px] md:text-[68px] text-center leading-tight"
@@ -253,7 +254,7 @@ const Hero = () => {
               </React.Fragment>
             ))}
           </motion.h1>
-          <p className="text-center text-darak06 mt-2 md:mx-6 text-lg">
+          <p className="text-center text-darak06 mt-2 md:mx-6 lg:mx-9 text-lg">
             Create a clear roadmap, track progress, and smoothly guide your
             project from idea to successful launch.
           </p>
@@ -298,11 +299,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* hero main section for tablet veiw  */}
-      {/* <div className="relative flex flex-col h-full w-full mt-40">
-        <HeroButton />
-      </div> */}
     </div>
   );
 };
